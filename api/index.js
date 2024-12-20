@@ -10,10 +10,7 @@ const httpsServer = createServer(requestHandler);
 
 const io = new Server(httpsServer, {
   cors: {
-    origin:
-      process.env.NODE_ENV === "production"
-        ? false
-        : ["https://localhost:5500"],
+    origin: "*", // 允许所有来源
   },
 });
 
